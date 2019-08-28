@@ -26,8 +26,10 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [x] Mention two parts of Express that you learned about this week.
 This week I've learned about routes used to break out modules of code to keep it more organized. I also learned about express middleware and how it is used.
+
 - [x] Describe Middleware?
 Middleware are functions that have access to request and response data. It also has the ability to manipulate the date before pushing it forward.
+
 - [x] Describe a Resource?
 Rescources are all the data that is managed by the API.
 - [x] What can the API return to help clients know if a request was successful?
