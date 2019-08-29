@@ -4,32 +4,52 @@ const aData = require('../helpers/actionModel.js');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    aData.get()
-         .then(actions => {
-             res.status(200).json(actions);
-         })
-         .catch(error => {
-             res.status(500).json({error: "Error retrieving actions"})
-         })
+router.get('/', async (req, res) => {
+   try {
+    const adata = await aData.get(req.query);
+    res.status(200).json(adata);
+   }
+   catch (error) {
+       res.status(500).json({error: "Error retrieving actions"})
+   };
+    // aData.get()
+    //      .then(actions => {
+    //          res.status(200).json(actions);
+    //      })
+    //      .catch(error => {
+    //          res.status(500).json({error: "Error retrieving actions"})
+    //      })
 });
 
-router.get('/:id', (req, res) => {
-    const id =req.params.id;
-    aData.get(id)
-         .then(action => {
-             if(action){
-                 res.status(200).json(action);
-             } else {
-                 res.status(404).json({error: "The specified ID does not exist"})
-             }
-         })
-         .catch(error => {
-             res.status(500).json({error: "Error retrieving action"})
-         })
+router.get('/:id', async(req, res) => {
+    try {
+        const id =req.params.id;
+        const adata = await aData.get(id);
+        
+        if (adata) {
+            res.status(200).json(adata);
+        }
+        else {
+            res.status(404).json({error: "The specified ID does not exist"})
+        }
+    }    
+        catch (error) {
+            res.status(500).json({error: "Error retrieving action"})
+        }
+    // aData.get(id)
+    //      .then(action => {
+    //          if(action){
+    //              res.status(200).json(action);
+    //          } else {
+    //              res.status(404).json({error: "The specified ID does not exist"})
+    //          }
+    //      })
+    //      .catch(error => {
+    //          res.status(500).json({error: "Error retrieving action"})
+    //      })
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     const data = req.body;
     if(data.project_id && data.description && data.notes){
         aData.insert(data)
