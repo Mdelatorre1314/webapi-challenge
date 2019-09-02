@@ -26,22 +26,26 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [x] Mention two parts of Express that you learned about this week.
 This week I've learned about routes used to break out modules of code to keep it more organized. I also learned about express middleware and how it is used.
+
 - [x] Describe Middleware?
 Middleware are functions that have access to request and response data. It also has the ability to manipulate the date before pushing it forward.
+
 - [x] Describe a Resource?
 Rescources are all the data that is managed by the API.
+
 - [x] What can the API return to help clients know if a request was successful?
 APIs return status codes as well as json objects.
+
 - [x] How can we partition our application into sub-applications?
 Break the application code up using routes.
 ## Project Setup
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Project Manager_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your _Project Manager_ as collaborator on Github.
+- [x] Clone your forked version of the Repository.
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
 - [ ] Implement the project on this Branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
